@@ -3,10 +3,437 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Hello World</title>
+    <title>FlickO Billing - Complete Business Solution</title>
+    <!-- <script src="https://cdn.jsdelivr.net/npm/lucide@0.454.0/dist/cjs/lucide.min.js"></script> -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- <script
+      type="module"
+      src="https://cdn.jsdelivr.net/npm/lucide@0.454.0/dist/esm/lucide.min.js"
+    ></script> -->
+
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      body {
+        font-family: "Inter", sans-serif;
+      }
+
+      .screenshot-slider {
+        position: relative;
+        overflow: hidden;
+        max-width: 400px;
+        margin: 0 auto;
+        border-radius: 12px;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
+          0 2px 4px -1px rgba(0, 0, 0, 0.06);
+      }
+
+      .screenshots {
+        display: flex;
+        transition: transform 0.5s ease-in-out;
+      }
+
+      .screenshot {
+        min-width: 100%;
+      }
+
+      .slider-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        background: #ff3e6c;
+        color: white;
+        padding: 8px;
+        border-radius: 50%;
+        cursor: pointer;
+        z-index: 10;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+
+      .slider-nav:hover {
+        background: #ff2d5f;
+      }
+
+      .slider-prev {
+        left: 10px;
+      }
+
+      .slider-next {
+        right: 10px;
+      }
+
+      .dot-indicators {
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        gap: 0.5rem;
+      }
+
+      .dot {
+        width: 8px;
+        height: 8px;
+        border-radius: 50%;
+        background: #d1d5db;
+        cursor: pointer;
+        border: none;
+      }
+
+      .dot.active {
+        background: #ff3e6c;
+      }
+    </style>
   </head>
   <body>
-    <h1>Hello, World!</h1>
-    <p>Welcome to my GitHub Pages site!</p>
+    <div class="min-h-screen bg-white">
+      <!-- Hero Section -->
+      <header class="bg-[#ff3e6c]">
+        <nav class="container mx-auto px-6 py-4">
+          <div class="flex items-center justify-between">
+            <div class="text-white text-2xl font-bold">
+              <img
+                src="flicko-billing/icon-1024x1024.png"
+                alt="FlickO Billing Logo"
+                class="h-20"
+              />
+            </div>
+            <div class="hidden md:flex items-center space-x-8">
+              <a href="#features" class="text-white hover:text-gray-200"
+                >Features</a
+              >
+              <a href="#screenshots" class="text-white hover:text-gray-200"
+                >Screenshots</a
+              >
+              <a href="#contact" class="text-white hover:text-gray-200"
+                >Contact</a
+              >
+            </div>
+          </div>
+        </nav>
+
+        <div class="container mx-auto px-6 py-20">
+          <div class="flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2">
+              <h1 class="text-4xl md:text-6xl font-bold text-white mb-6">
+                Simplify Your Business Billing
+              </h1>
+              <p class="text-xl text-white mb-8">
+                A complete billing and inventory management solution designed
+                for Indian businesses
+              </p>
+              <div class="flex space-x-4">
+                <a
+                  href="https://play.google.com/store/apps/details?id=com.deepak6446.flicko"
+                  target="_blank"
+                >
+                  <img
+                    src="flicko-billing/Google_Play_Store_badge_EN.svg"
+                    alt="Get it on Google Play"
+                    class="h-16 mx-auto hover:opacity-90 transition duration-300"
+                  />
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </header>
+
+      <!-- Features Section -->
+      <section id="features" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-16">Key Features</h2>
+          <div
+            class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
+            id="features-grid"
+          >
+            <!-- Features will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Screenshots Slider -->
+      <section id="screenshots" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-16">App Screenshots</h2>
+          <div class="screenshot-slider">
+            <button class="slider-nav slider-prev" id="prev-btn">
+              <i data-lucide="chevron-left"></i>
+            </button>
+            <div class="screenshots" id="screenshots-container">
+              <!-- Screenshots will be inserted here by JavaScript -->
+            </div>
+            <button class="slider-nav slider-next" id="next-btn">
+              <i data-lucide="chevron-right"></i>
+            </button>
+          </div>
+          <div class="dot-indicators" id="dot-indicators">
+            <!-- Dots will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- Device Compatibility -->
+      <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+          <h2 class="text-3xl font-bold text-center mb-16">
+            Available On All Android Devices
+          </h2>
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8" id="devices-grid">
+            <!-- Devices will be inserted here by JavaScript -->
+          </div>
+        </div>
+      </section>
+
+      <!-- CTA Section -->
+      <section class="bg-[#ff3e6c] py-20">
+        <div class="container mx-auto px-6 text-center">
+          <h2 class="text-3xl font-bold text-white mb-8">
+            Ready to Transform Your Business?
+          </h2>
+          <a
+            href="https://play.google.com/store/apps/details?id=com.deepak6446.flicko"
+            target="_blank"
+          >
+            <img
+              src="flicko-billing/Google_Play_Store_badge_EN.svg"
+              alt="Get it on Google Play"
+              class="h-16 mx-auto hover:opacity-90 transition duration-300"
+            />
+          </a>
+        </div>
+      </section>
+
+      <!-- Footer -->
+      <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+          <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+              <h3 class="text-lg font-semibold mb-4">FlickO Billing</h3>
+              <p class="text-gray-400">
+                Simplifying business operations across India
+              </p>
+            </div>
+            <div>
+              <h3 class="text-lg font-semibold mb-4">Links</h3>
+              <ul class="space-y-2">
+                <li>
+                  <a href="#features" class="text-gray-400 hover:text-white"
+                    >Features</a
+                  >
+                </li>
+                <li>
+                  <a href="#screenshots" class="text-gray-400 hover:text-white"
+                    >Screenshots</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="privacy-policy.html"
+                    class="text-gray-400 hover:text-white"
+                    >Privacy Policy</a
+                  >
+                </li>
+                <!-- <li>
+                  <a
+                    href="terms-of-service.html"
+                    class="text-gray-400 hover:text-white"
+                    >Terms of Service</a
+                  >
+                </li> -->
+              </ul>
+            </div>
+            <div id="contact">
+              <h3 class="text-lg font-semibold mb-4">Contact</h3>
+              <ul class="space-y-2">
+                <li class="text-gray-400">Email: flickoapp@gmail.com</li>
+                <li class="text-gray-400">WhatsApp: +918999712275</li>
+              </ul>
+            </div>
+          </div>
+          <div class="border-t border-gray-700 mt-8 pt-8 text-center">
+            <p class="text-gray-400">
+              &copy; 2024 FlickO Billing. All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </div>
+
+    <script>
+      // Initialize Lucide icons
+      //   document.addEventListener("DOMContentLoaded", () => {
+      //     lucide.createIcons();
+      //   });
+
+      // Features data
+      const features = [
+        {
+          icon: "file-text",
+          title: "Bill Creation",
+          description:
+            "Create and print professional bills for customers with just a few clicks.",
+        },
+        {
+          icon: "shopping-cart",
+          title: "Inventory Management",
+          description:
+            "Efficiently manage your inventory and track stock levels in real-time.",
+        },
+        {
+          icon: "users",
+          title: "Customer Data Management",
+          description:
+            "Store and manage customer information for personalized service delivery.",
+        },
+        {
+          icon: "bar-chart-3",
+          title: "Comprehensive Reporting",
+          description:
+            "Generate detailed reports for sales, GST, inventory, and business analytics.",
+        },
+        {
+          icon: "message-circle",
+          title: "Promotional Messaging",
+          description:
+            "Send targeted promotional messages to customers via WhatsApp.",
+        },
+        {
+          icon: "shield",
+          title: "Cost-Effective Solution",
+          description:
+            "Get premium features at the most competitive price in the market.",
+        },
+      ];
+
+      // Devices data
+      const devices = [
+        {
+          icon: "smartphone",
+          title: "Mobile",
+          description: "Perfect for on-the-go business management",
+        },
+        {
+          icon: "tablet",
+          title: "Tablet",
+          description: "Ideal for point-of-sale operations",
+        },
+        {
+          icon: "laptop",
+          title: "Desktop",
+          description: "Complete control for detailed management",
+        },
+      ];
+
+      // Populate features
+      const featuresGrid = document.getElementById("features-grid");
+      const featureIcons = {
+        "file-text": `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#ff3e6c]"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/><polyline points="14 2 14 8 20 8"/><line x1="16" x2="8" y1="13" y2="13"/><line x1="16" x2="8" y1="17" y2="17"/><line x1="10" x2="8" y1="9" y2="9"/></svg>`,
+        "shopping-cart": `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#ff3e6c]"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></svg>`,
+        users: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#ff3e6c]"><path d="M17 21v-2a4 4 0 0 0-3-3.87"/><path d="M5 21v-2a4 4 0 0 1 3-3.87"/><circle cx="12" cy="7" r="4"/><path d="M12 3v4"/><path d="M12 14h0"/></svg>`,
+        "bar-chart-3": `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#ff3e6c]"><line x1="8" y1="19" x2="8" y2="5"/><line x1="12" y1="19" x2="12" y2="11"/><line x1="16" y1="19" x2="16" y2="7"/></svg>`,
+        "message-circle": `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#ff3e6c]"><path d="M21 11.5a8.38 8.38 0 0 0-1.9-5.4 9.14 9.14 0 0 0-6.2-2.6 8.38 8.38 0 0 0-5.4 1.9l-.9.9A8.38 8.38 0 0 0 3 11.5c0 1.6.5 3.1 1.5 4.3l1.8 2.1c.3.3.8.4 1.2.4h.3c.4-.1.8-.3 1.1-.5l3.6-2.2c.2-.2.4-.5.6-.8.1-.2.1-.3.1-.5v-.4c0-.2 0-.3-.1-.5l-2-4.1 5-5z"/></svg>`,
+        shield: `<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-8 h-8 text-[#ff3e6c]"><path d="M12 21s8-4 8-10V5.3L12 3 4 5.3V11c0 6 8 10 8 10z"/></svg>`,
+      };
+
+      features.forEach((feature) => {
+        featuresGrid.innerHTML += `
+            <div class="bg-white p-6 rounded-lg shadow-md hover:shadow-xl transition duration-300">
+            <div class="mb-4">
+                ${featureIcons[feature.icon]}
+            </div>
+            <h3 class="text-xl font-semibold mb-2">${feature.title}</h3>
+            <p class="text-gray-600">${feature.description}</p>
+            </div>
+        `;
+      });
+
+      const deviceIcons = {
+        smartphone: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-[#ff3e6c]"><rect width="14" height="20" x="5" y="2" rx="2" ry="2"/><path d="M12 18h.01"/></svg>`,
+        tablet: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-[#ff3e6c]"><rect width="16" height="20" x="4" y="2" rx="2" ry="2"/><line x1="12" y1="18" x2="12.01" y2="18"/></svg>`,
+        laptop: `<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-12 h-12 text-[#ff3e6c]"><path d="M2 17h20M5 17V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2v12"/></svg>`,
+      };
+      // Populate devices
+      const devicesGrid = document.getElementById("devices-grid");
+      devices.forEach((device) => {
+        devicesGrid.innerHTML += `
+      <div class="text-center">
+          <div class="flex justify-center mb-4">
+              ${deviceIcons[device.icon]}
+          </div>
+          <h3 class="text-xl font-semibold mb-2">${device.title}</h3>
+          <p class="text-gray-600">${device.description}</p>
+      </div>
+  `;
+      });
+
+      // Screenshot slider functionality
+      const screenshots = Array.from(
+        { length: 8 },
+        (_, i) => `flicko-billing/appscreenshot${i + 1}.webp`
+      );
+      console.log("screenshots", screenshots);
+
+      let currentSlide = 0;
+      const screenshotsContainer = document.getElementById(
+        "screenshots-container"
+      );
+      const dotIndicators = document.getElementById("dot-indicators");
+
+      // Populate screenshots
+      screenshots.forEach((src, index) => {
+        screenshotsContainer.innerHTML += `
+                <img src="${src}" alt="App Screenshot ${
+          index + 1
+        }" class="screenshot">
+            `;
+        dotIndicators.innerHTML += `
+                <button class="dot ${
+                  index === 0 ? "active" : ""
+                }" data-index="${index}"></button>
+            `;
+      });
+
+      // Update slider position
+      function updateSlider() {
+        screenshotsContainer.style.transform = `translateX(-${
+          currentSlide * 100
+        }%)`;
+        document.querySelectorAll(".dot").forEach((dot, index) => {
+          dot.classList.toggle("active", index === currentSlide);
+        });
+      }
+
+      // Next slide
+      document.getElementById("next-btn").addEventListener("click", () => {
+        currentSlide = (currentSlide + 1) % screenshots.length;
+        updateSlider();
+      });
+
+      // Previous slide
+      document.getElementById("prev-btn").addEventListener("click", () => {
+        currentSlide =
+          (currentSlide - 1 + screenshots.length) % screenshots.length;
+        updateSlider();
+      });
+
+      // Dot navigation
+      dotIndicators.addEventListener("click", (e) => {
+        if (e.target.classList.contains("dot")) {
+          currentSlide = parseInt(e.target.dataset.index);
+          updateSlider();
+        }
+      });
+
+      // Auto-advance slider
+      setInterval(() => {
+        currentSlide = (currentSlide + 1) % screenshots.length;
+        updateSlider();
+      }, 3000);
+
+      // Reinitialize Lucide icons after dynamic content
+      //   lucide.createIcons();
+    </script>
   </body>
 </html>
